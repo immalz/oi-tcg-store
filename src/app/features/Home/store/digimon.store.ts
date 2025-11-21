@@ -72,7 +72,6 @@ export class DigimonStore {
     this.http
       .get<DigimonCardFull[]>('assets/data/digimon-cards-full.json')
       .subscribe(res => {
-        // 🔥 Ordenar antes de usar
         res.sort((a, b) => {
           const orderPrefix = ['BT', 'EX', 'ST', 'P', 'RB', 'LM'];
           const prefixA = orderPrefix.findIndex(p => a.id.startsWith(p));
@@ -82,8 +81,6 @@ export class DigimonStore {
         });
   
         this._allCards.set(res);
-  
-        // 🔥 Establecer expansión por defecto
         this.filterSet.set('BT23');
       });
   }
