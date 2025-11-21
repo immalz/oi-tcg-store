@@ -1,0 +1,28 @@
+<header class="header">
+    <div class="header__content">
+      <div class="logo">
+        <a [routerLink]="['/']">
+          <span class="logo__brand">OI</span>
+          <span class="logo__store">Store</span>
+        </a>
+      </div>
+  
+      <app-search-bar></app-search-bar>
+  
+      <div class="cart">
+        <a routerLink="/cart">
+            <img src="assets/icons/shopping-cart.png" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="body__content">
+        <nav class="nav">
+            <a [routerLink]="['/']">Digimon</a>
+            <a [routerLink]="['/']">Pokémon</a>
+            <!-- <a routerLink="/yugioh">Yu-Gi-Oh!</a> -->
+            <!-- <a href="/one-piece">One Piece</a> -->
+            <a [routerLink]="['/']">Magic</a>
+        </nav>
+    </div>
+  </header>
+  

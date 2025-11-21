@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Productos</h2>
+  
+    <div class="grid">
+      @for (card of cards; track $index) {
+        <app-card-tcg [data]="card"></app-card-tcg>
+      }
+    </div>
+  </div>
+  

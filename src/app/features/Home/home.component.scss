@@ -1,0 +1,176 @@
+@use '../../../assets/styles/variables' as *;
+
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(120deg, #f2f6ff, #ffffff);
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1rem;
+  
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  
+    @media (min-width: 480px) {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
+  
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+  
+  
+  .pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $bg-secondary;
+    padding: 1rem 1.25rem;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-card;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  
+    @media (max-width: 820px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  /* ================================
+     🎯 Filters Section (BEM)
+     ================================ */
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    @media (max-width: 820px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    select {
+      padding: 0.55rem 0.75rem;
+      background: $bg-secondary;
+      border-radius: $radius-md;
+      border: 1px solid $border-color;
+      color: $text-primary;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: $transition;
+      min-width: 140px;
+  
+      &:hover {
+        border-color: $dusk-blue;
+        box-shadow: 0 0 0 3px rgba($dusk-blue, 0.2);
+      }
+  
+      &:focus {
+        outline: none;
+        border-color: $prussian-blue;
+        box-shadow: 0 0 0 3px rgba($prussian-blue, 0.25);
+      }
+    }
+  }
+  
+  /* ================================
+     🎯 Pagination Section (BEM)
+     ================================ */
+  
+/* ================================
+   FILTROS (BEM + Responsive)
+   ================================ */
+
+   .filters {
+    width: 100%;
+    margin: 1.5rem auto;
+    background: $bg-secondary;
+    padding: 1rem;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-card;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* FILA DE SELECTS */
+  .filters__row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  /* SELECTS */
+  .filters__select {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: $radius-md;
+    border: 1px solid $border-color;
+    background: $bg-secondary;
+    color: $text-primary;
+    font-size: 0.95rem;
+    transition: $transition;
+  
+    &:focus {
+      border-color: $dusk-blue;
+      box-shadow: 0 0 0 3px rgba($dusk-blue, 0.25);
+    }
+  }
+  
+  /* ================================
+     PAGINACIÓN
+     ================================ */
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .pagination__btn {
+    background: $prussian-blue;
+    color: $text-inverse;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: $transition;
+    font-weight: 600;
+  
+    &:hover:not(:disabled) {
+      background: lighten($prussian-blue, 5%);
+    }
+  
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  .pagination__info {
+    color: $text-primary;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  
+  /* ================================
+     RESPONSIVE
+     ================================ */
+  
+  /* En celular: selects uno debajo del otro */
+  @media (max-width: 768px) {
+    .filters__row {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+  

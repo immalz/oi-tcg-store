@@ -1,0 +1,62 @@
+
+$shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+$transition: 0.25s ease;
+
+
+/* ============================================
+   🎨 Deep Sea Theme — Color Variables
+   ============================================ */
+
+/* Core Palette */
+$ink-black:       #0D1B2A; // ultra dark navy
+$prussian-blue:   #1B263B; // deep historical blue
+$dusk-blue:       #415A77; // twilight blue
+$lavender-grey:   #778DA9; // elegant muted grey-blue
+$alabaster-grey:  #E0E1DD; // soft light grey
+
+/* ============================================
+   Semantic Tokens (recommended for UI design)
+   ============================================ */
+
+/* Backgrounds */
+$bg-primary:   $alabaster-grey;
+$bg-secondary: #ffffff;
+$bg-dark:      $ink-black;
+$bg-card:      #f4f6f8; // suavemente neutro para cards
+
+/* Text Colors */
+$text-primary:       $ink-black;
+$text-secondary:     $prussian-blue;
+$text-tertiary:      $lavender-grey;
+$text-inverse:       #ffffff;
+
+/* Borders and Lines */
+$border-color:       rgba($prussian-blue, 0.25);
+$border-light:       rgba($alabaster-grey, 0.5);
+
+/* Buttons */
+$btn-primary-bg:         $dusk-blue;
+$btn-primary-text:       #ffffff;
+$btn-primary-hover:      darken($dusk-blue, 8%);
+
+$btn-secondary-bg:       $lavender-grey;
+$btn-secondary-text:     $ink-black;
+$btn-secondary-hover:    darken($lavender-grey, 10%);
+
+/* States */
+$success:    #4CAF50;
+$warning:    #FFB300;
+$error:      #D32F2F;
+$info:       $dusk-blue;
+
+/* Shadows */
+$shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
+$shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+/* Radius */
+$radius-sm: 10px;
+$radius-md: 15px;
+$radius-lg: 20px;
+
+/* Animation */
+$transition: 0.25s ease;

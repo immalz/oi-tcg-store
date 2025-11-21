@@ -1,0 +1,45 @@
+<div class="card" (click)="redirectToDetail()">
+
+  <!-- Imagen -->
+  <div class="card__img-wrapper">
+    
+    <!-- Placeholder -->
+    <img
+      class="card__img card__img--placeholder"
+      src="assets/images/card.jpg"
+      *ngIf="isLoading"
+      alt="placeholder"
+    />
+
+    <!-- Imagen real -->
+    <img
+      class="card__img card__img--real"
+      [class.hidden]="isLoading"
+      [src]="data.image_url"
+      [alt]="data.name"
+      loading="lazy"
+      (load)="onImageLoad()"
+    />
+  </div>
+
+  <!-- Información -->
+  <div class="card__info">
+    <h3 class="card__title">{{ data.name }}</h3>
+
+    <p class="card__meta">
+      {{ data.type }}, #{{ data.id }}
+    </p>
+
+    <p class="card__price">
+      Market Price: <span>${{ data.price }}</span>
+    </p>
+
+    <button
+      class="card__btn"
+      (click)="addToCart(data); $event.stopPropagation()"
+    >
+      Agregar
+    </button>
+  </div>
+
+</div>

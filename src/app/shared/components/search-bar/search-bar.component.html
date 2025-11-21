@@ -1,0 +1,23 @@
+<div class="search-wrapper">
+    <input
+      #txt
+      type="text"
+      placeholder="Buscar cartas..."
+      (input)="onInput(txt.value)"
+      (focus)="showResults.set(true)"
+    />
+  
+    <!-- DROPDOWN -->
+    <div class="dropdown" *ngIf="showResults() && results().length > 0">
+      <div
+        class="item"
+        *ngFor="let card of results()"
+        (click)="selectCard(card)"
+      >
+        <img [src]="card.image_url" />
+        <span>{{ card.name }}</span>
+        <small>{{ card.id }}</small>
+      </div>
+    </div>
+  </div>
+  

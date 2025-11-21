@@ -1,0 +1,73 @@
+@use '../../../../assets/styles/variables' as *;
+
+.footer {
+  background: $bg-dark;
+  color: $text-inverse;
+  padding: 2rem 0 1rem;
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    color: $alabaster-grey;
+  }
+
+  .footer__section {
+    h4 {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: $lavender-grey;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 0.4rem 0;
+
+        a {
+          color: $text-inverse;
+          opacity: 0.85;
+          text-decoration: none;
+          font-size: 0.9rem;
+          transition: $transition;
+
+          &:hover {
+            opacity: 1;
+            color: $dusk-blue; // tono elegante dentro de la paleta Deep Sea
+          }
+        }
+      }
+    }
+
+    .social li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+
+  .footer__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid $border-light;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    color: $lavender-grey;
+  }
+}

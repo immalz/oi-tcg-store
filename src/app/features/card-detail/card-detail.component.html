@@ -1,0 +1,58 @@
+<div class="detail-wrapper" *ngIf="card() as c">
+
+    <!-- PRODUCTO PRINCIPAL -->
+    <div class="product">
+      
+      <div class="image-box">
+        <img 
+          [src]="c.image_url" 
+          [alt]="c.name" 
+          class="main-image"
+        />
+      </div>
+  
+      <div class="info-box">
+        <h1>{{ c.name }}</h1>
+        <p class="id">Código: {{ c.id }}</p>
+  
+        <p class="type">{{ c.type }} / {{ c.color }}</p>
+  
+        <div class="stats">
+          <div>DP: <span>{{ c.dp }}</span></div>
+          <div>Nivel: <span>{{ c.level }}</span></div>
+          <div>Coste Juego: <span>{{ c.play_cost }}</span></div>
+          <div>Evo: <span>{{ c.evolution_cost }}</span></div>
+        </div>
+  
+        <p class="effect-title">Efecto principal</p>
+        <p class="effect">{{ c.main_effect || 'Sin efecto.' }}</p>
+  
+        <button class="btn-buy" (click)="addToCart(c)">
+          Añadir al carrito
+        </button>
+      </div>
+  
+    </div>
+  
+    <!-- SECCIÓN DE VENDEDORES -->
+    <div class="sellers-box">
+      <h2>Vendedores de esta carta</h2>
+  
+      <div class="sellers-grid">
+        <div class="seller" *ngFor="let s of sellers()">
+          <div class="left">
+            <h3>{{ s.name }}</h3>
+            <p>Stock: {{ s.stock }}</p>
+          </div>
+  
+          <div class="right">
+            <p class="price">S/ {{ s.price }}</p>
+            <button (click)="addToCart(c)">
+                <img src="assets/icons/shopping-cart.png" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

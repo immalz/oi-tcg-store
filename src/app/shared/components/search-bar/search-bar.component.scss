@@ -1,0 +1,97 @@
+@use '../../../../assets/styles/variables' as *;
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: $radius-md;
+  border: 1px solid $border-color;
+  background: $bg-secondary;
+  color: $text-primary;
+  font-size: 15px;
+  outline: none;
+  transition: $transition;
+
+  &:focus {
+    border-color: $dusk-blue;
+    box-shadow: 0 0 0 3px rgba($dusk-blue, 0.25);
+  }
+
+  &::placeholder {
+    color: $text-tertiary;
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: $bg-secondary;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 50;
+  border: 1px solid $border-light;
+
+  backdrop-filter: blur(4px);
+}
+
+/* Cada item */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: $transition;
+  border-bottom: 1px solid rgba($border-color, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba($dusk-blue, 0.07);
+  }
+
+  img {
+    width: 42px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-soft;
+  }
+
+  span {
+    color: $text-primary;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  small {
+    color: $text-tertiary;
+    margin-left: auto;
+    font-size: 12px;
+  }
+}
+
+/* Scrollbar elegante */
+.dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: $lavender-grey;
+  border-radius: $radius-sm;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: rgba($lavender-grey, 0.2);
+}

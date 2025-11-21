@@ -1,0 +1,66 @@
+<section class="hero">
+    <div class="container">
+      <h1>Bienvenido a la tienda TCG</h1>
+      <p>Encuentra las mejores cartas de Pokémon, Digimon y Yu-Gi-Oh</p>
+    </div>
+  </section>
+  
+  <section class="featured container">
+    <div class="pagination-container">
+      <div class="filters">
+        <div class="filters__row">
+          <select class="filters__select" (change)="filterSet($event)">
+            <option value="">Expansión</option>
+            @for (s of sets; track $index) {
+              <option [value]="s">{{ s }}</option>
+            }
+          </select>
+      
+          <select class="filters__select" (change)="filterColor($event)">
+            <option value="">Color</option>
+            @for (c of colors; track $index) {
+              <option [value]="c">{{ c }}</option>
+            }
+          </select>
+      
+          <select class="filters__select" (change)="filterLevel($event)">
+            <option value="">Level</option>
+            @for (l of levels; track $index) {
+              <option [value]="l">Lv. {{ l }}</option>
+            }
+          </select>
+        </div>
+      
+        <div class="pagination">
+          <button 
+            class="pagination__btn"
+            [disabled]="store.page() === 1"
+            (click)="store.prevPage()">
+            ←
+          </button>
+      
+          <span class="pagination__info">
+            Página {{ store.page() }} de {{ store.totalPages() }}
+          </span>
+      
+          <button 
+            class="pagination__btn"
+            [disabled]="store.page() === store.totalPages()"
+            (click)="store.nextPage()">
+            →
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="grid">
+      @for (card of cards(); track $index) {
+        <app-card-tcg [data]="card" (openCard)="goToDetail($event)"></app-card-tcg>
+      }
+    </div>
+
+
+</section>
+  
