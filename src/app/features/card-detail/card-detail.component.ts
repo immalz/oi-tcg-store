@@ -23,7 +23,8 @@ export class CardDetailComponent implements OnInit {
   sellers = computed(() => [
     { name: 'Payasito store', stock: 3, price: 14.50 },
     { name: 'Naranja', stock: 1, price: 16.00 },
-    { name: 'Pachacutec city', stock: 5, price: 13.00 }
+    { name: 'Pachacutec city', stock: 5, price: 13.00 },
+    { name: 'Caballito de Totora Store', stock: 5, price: 149.00 },
   ]);
 
   ngOnInit() {
